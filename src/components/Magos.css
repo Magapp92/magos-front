@@ -1,0 +1,378 @@
+.Magos {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    padding: 1.25rem 2rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1.25rem;
+
+    color: var(--color-text);
+    font-family: var(--font-main)
+}
+
+
+.Magos-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 1px solid var(--color-bg-input);
+    padding-bottom: .75rem
+}
+
+.Magos-title {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    color: var(--color-text);
+    text-align: center
+}
+
+
+.Magos-forms {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.25rem
+}
+
+.Magos-formulario {
+    width: 26rem;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    padding: 1.25rem 1.5rem 1.5rem
+}
+
+.Magos-h3 {
+    color: var(--color-gold);
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    background-color: transparent;
+    margin: 0 0 1rem;
+    text-align: center
+}
+
+.Magos-form {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: .65rem
+}
+
+
+.Magos-input {
+    width: 100%;
+    min-height: 2rem;
+    background-color: var(--color-bg-input);
+    padding: .5rem .75rem;
+    border-radius: var(--radius-md);
+    
+    color: var(--color-text);
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-size: .95em
+}
+
+.Magos-input::placeholder {
+    color: var(--color-text-muted)
+}
+
+.Magos-input:focus {
+    outline: none;
+    border: 1px solid var(--color-gold-dark)
+}
+
+select.Magos-input {
+    cursor: pointer;
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto
+}
+
+.Magos-send {
+    width: 100%;
+    min-height: 2.5rem;
+    background-color: var(--color-gold);
+    margin: .75rem 0 0;
+    border-radius: var(--radius-md);
+    
+    font-family: var(--font-main);
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-bg);
+
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border .2s ease
+}
+
+.Magos-send:hover {
+    border: 2px solid var(--color-white)
+}
+
+.Magos-send--mini {
+    width: auto;
+    min-height: 2rem;
+    margin: 0;
+    padding: .3rem .9rem;
+    font-size: .85em
+}
+
+.Magos-send--red {
+    background-color: transparent;
+    color: var(--color-red);
+    border: 2px solid var(--color-red-dark)
+}
+
+.Magos-send--red:hover {
+    background-color: var(--color-red-dark);
+    color: var(--color-white);
+    border-color: var(--color-red-dark)
+}
+
+.Magos-send--secundario {
+    background-color: transparent;
+    color: var(--color-text-soft);
+    border: 2px solid var(--color-border-strong)
+}
+
+.Magos-send--secundario:hover {
+    background-color: var(--color-bg-surface);
+    color: var(--color-white);
+    border-color: var(--color-text-soft)
+}
+
+
+.Magos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: .25rem 0 0
+}
+
+.Magos-empty {
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 1rem
+}
+
+.Tarjeta {
+    width: 100%;
+    background-color: var(--color-bg-card);
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+        
+    aspect-ratio: 3 / 4;
+    perspective: 62.5rem;
+    cursor: pointer
+}
+
+.Tarjeta-front,
+.Tarjeta-back {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-card);
+    position: absolute;
+    
+    backface-visibility: hidden;
+    overflow: hidden;
+    
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-bg-input);
+    
+    transition: transform 0.8s ease
+}
+
+.Tarjeta-front {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem
+}
+
+.Tarjeta-back {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: .35rem;
+    padding: 1rem .75rem;
+    color: var(--color-text);
+    transform: rotateY(180deg)
+}
+
+.Tarjeta.flipped .Tarjeta-front {
+    transform: rotateY(180deg)
+}
+
+.Tarjeta.flipped .Tarjeta-back {
+    transform: rotateY(0deg)
+}
+
+.Tarjeta-back--edit {
+    justify-content: flex-start;
+    gap: .2rem;
+    padding: .5rem .5rem;
+    overflow-y: auto
+}
+
+.Tarjeta-form {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: .2rem
+}
+
+.Tarjeta-form .Magos-input {
+    min-height: 1.5rem;
+    padding: .25rem .4rem;
+
+    font-size: .8em;
+    border-radius: var(--radius-sm)
+}
+
+
+.Tarjeta-form .Tarjeta-actions {
+    margin-top: .3rem
+}
+
+.Tarjeta-form .Magos-send--mini {
+    width: auto;
+    min-height: 1.5rem;
+
+    flex: 1;
+    padding: .25rem .5rem;
+    font-size: .75em;
+    
+}
+
+.Tarjeta-img {
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    max-height: 75%;
+
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px
+}
+
+.Tarjeta-h3 {
+    width: 100%;
+    background-color: transparent;
+
+    color: var(--color-text);
+    text-align: center;
+    font-size: 1.15em;
+    font-weight: bold;
+    letter-spacing: .5px   
+}
+
+.Tarjeta-h3--back {
+    background-color: transparent;
+
+    color: var(--color-gold-dark);
+    font-size: 1.1em;
+    text-align: center;
+    
+    border-bottom: 1px solid var(--color-bg-input);
+    padding-bottom: .35rem
+}
+
+.Tarjeta-p {
+    font-size: .9em;
+    color: var(--color-text-soft);
+    line-height: 1.3
+}
+
+.Tarjeta-pLabel {
+    font-weight: bold;
+    color: var(--color-text)
+}
+
+.Tarjeta-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .25rem
+}
+
+
+.Tarjeta--gryffindor .Tarjeta-front,
+.Tarjeta--gryffindor .Tarjeta-back {
+    border-color: var(--color-gryffindor)
+}
+
+.Tarjeta--slytherin .Tarjeta-front,
+.Tarjeta--slytherin .Tarjeta-back {
+    border-color: var(--color-slytherin)
+}
+
+.Tarjeta--hufflepuff .Tarjeta-front,
+.Tarjeta--hufflepuff .Tarjeta-back {
+    border-color: var(--color-hufflepuff)
+}
+
+.Tarjeta--ravenclaw .Tarjeta-front,
+.Tarjeta--ravenclaw .Tarjeta-back {
+    border-color: var(--color-ravenclaw)
+}
+
+
+@media (max-width: 930px) {
+    .Magos {
+        padding: 1rem 1.25rem
+    }
+    .Magos-title {
+        font-size: 160%
+    }
+    .Magos-formulario {
+        width: 100%;
+        max-width: 24rem
+    }
+}
+
+@media (max-width: 600px) {
+    .Magos-formulario {
+        max-width: 100%;
+        padding: 1rem 1.25rem 1.25rem
+    }
+    .Magos-title {
+        font-size: 130%
+    }
+    .Magos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+        gap: 1rem
+    }
+}
