@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="phbg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#2b1d4a"/>
+            <stop offset="100%" stop-color="#0d0820"/>
+        </linearGradient>
+    </defs>
+    <rect width="200" height="260" fill="url(#phbg)"/>
+    <circle cx="100" cy="105" r="35" fill="#1c1442" stroke="#f5d76e" stroke-width="2"/>
+    <path d="M 100 75 L 70 165 Q 100 158 130 165 Z" fill="#3b2a6b"/>
+    <ellipse cx="100" cy="165" rx="35" ry="5" fill="#1b134a"/>
+    <text x="100" y="215" text-anchor="middle"
+          font-family="Georgia, serif" font-size="14" font-weight="bold"
+          fill="#f5d76e" letter-spacing="3">NUEVO MAGO</text>
+</svg>
